@@ -1,10 +1,8 @@
 @use "../presets" as *;
 
 
-
 %container {
   max-width: $ul;
   padding: 0 $gap;
   margin: 0 auto;
-  background-color:black;
 }
