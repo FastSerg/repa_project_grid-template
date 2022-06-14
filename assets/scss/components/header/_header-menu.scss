@@ -14,6 +14,10 @@
     grid-template-columns: auto 1fr;
     gap: $gap;
     align-items: center;
+    @include md {
+      background-color: rgba($color-gray-dark, 0.25);
+      @include box-shadow;
+    }
   }  
 }
 

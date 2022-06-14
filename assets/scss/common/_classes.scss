@@ -6,12 +6,9 @@
   justify-content: center;
   align-items: center;
   padding: 0.5em 1em;
-  font-size: 1.125rem;
   letter-spacing: 0.1em;
   transition: background-color 0.5s;
   color: $color-light;
-
-
   &:hover,
   &:focus {
     background-color: $color-accent;
@@ -19,15 +16,61 @@
 }
 
 .btn--ligth {
-  min-width: 250px;
-  height: 60px;
+
+  @include lg-min {
+    min-width: 250px;
+    height: 60px;
+    font-size: 1.125rem;
+  }
+
+  @include lg-md {
+    min-width: 200px;
+    height: 50px;
+  }
+
+  @include md {
+    min-width: 170px;
+    height: 40px;
+  }
+
   background-color: rgba($color-light, 0.1);
   border: 2px solid $color-light;
 }
 
 .btn--primary {
+  font-size: 1.125rem;
   height: 60px;
-  min-width: 350px;
   background-color: rgba($color-primary, 0.8);
   border: 2px solid $color-primary;
+
+  @include sm-min {
+    min-width: 350px;
+  }
+
+  @include sm {
+    width: 100%;
+  }
+  
+}
+
+.btn--input {
+  font-size: 1.125rem;
+  height: 60px;
+  border: none;
+  border-bottom: 2px solid rgba($color-light, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+
+  @include sm-min {
+    max-width: 420px;
+  }
+
+  @include sm {
+    max-width: 100%;
+  }
+}
+
+.btn--input:hover {
+  border: 2px solid $color-light;
+  background-color: $color-accent;
 }

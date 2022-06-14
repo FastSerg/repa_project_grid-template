@@ -4,62 +4,144 @@
 .about {
   position: relative;
   background-color: $color-gray-light;
-  padding-top: $gap-x5;
-  padding-bottom: $gap-x5;
 
+  @include lg-min{
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+  
   &__container {
     @extend %container; 
-    // calc(654px - ($gap-x5 * 2))
-    max-height: 500px;
+    min-height: 501px;
     display: grid;
-    gap: $gap-x5;
-    grid-template-columns: 1fr 271px;
-    // background-color:red;
+    
+    @include lg-min {
+      gap: $gap-x5;
+      grid-template-columns: 1fr 271px; 
+    }
+
+    @include lg-md {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px; 
+    }
+
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px; 
+    }
+
+    @include sm {
+      gap: $gap;
+      grid-template-columns: 1fr;
+    }
   }
 
   &__image {
     display: flex;
-    align-content: center;
-    justify-items: center;
+    align-items: center;
+    justify-content: center;
   }
 
+  &__image img {
+    max-width: 100%;
+    @include md-min {
+      max-height: 480px;
+    }
 
+    @include md-sm {
+      max-height: 425px;
+    }
+
+    @include sm {
+      max-height: 480px;
+    }
+  }
 }
 
 .about-content {
   max-width: 936px;
-  max-height: inherit;
-  overflow: hidden;
+  min-height: inherit;
  
-
   &__title {
-    font-size: 2.5rem;
     letter-spacing: 0.1em;
     line-height: 1.2em;
     font-family: $font-header;
     color: $color-primary;
-    margin: 0 0 48px 0;
-    white-space: unset;
+    
+    @include lg-min {
+      font-size: 2.5rem; 
+      margin: 0 0 43px 0;
+    }
+
+    @include lg-md {
+      font-size: 2rem;
+      margin: 0 0 43px 0;
+
+    }
+
+    @include md {
+      font-size: 1.5rem; 
+      margin: 0 0 31px 0;
+    }
+
+    @include sm {
+      text-align: center;
+    }
   }
 
   &__text {
-    font-size: 1.125rem;
-    letter-spacing: 0.057em;
-    line-height: 1.277em;
- 
+    letter-spacing: 0.882px;
+    line-height: 1.15em;
+    white-space: unset;
+
+    @include lg-min {
+      font-size: 1.125rem;
+    }
   }
 
-  & p:first-of-type {
-    position: relative; 
+  &__text p:nth-of-type(1) {
+    position: relative;
+    @include lg-md {
+      margin-top: -6px;
+    }
   }
 
-  & p:first-of-type::after {
-    position: absolute;
-    top: 0;
-    right: -59px;
-    width: 2px;
-    height: 200px;
-    content: "";
-    background-color: rgba(99, 117, 136, 0.1);
+  & p:nth-of-type(1)::after {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 200px;
+      content: "";
+      background-color: rgba(99, 117, 136, 0.1);
+      
+    @include lg-min {
+      right: -50px; 
+    }
+
+    @include lg-md {
+      right: -20px;
+    }
+
+    @include md-sm {
+      right: -10px;
+    }
+    
+    @include sm {
+      display: none;
+    }
   }
+
+  & p:last-of-type {
+    margin: 0;
+  } 
 }

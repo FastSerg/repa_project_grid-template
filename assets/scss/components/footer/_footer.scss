@@ -6,9 +6,10 @@
   background-color: $color-primary;
   width: 100%;
   padding: 50px 20px 70px 20px;
+  text-align: center;
   &__container {
     @extend %container;
-    min-height: 130px;
+    min-height: 133px;
     
   }
 
@@ -18,6 +19,8 @@
     justify-content: center;
     align-items:center;
     margin-bottom: $gap-x2;
+    gap: $gap;
+    min-height: 56px;
   }
 
   &__social::after {
@@ -38,9 +41,19 @@
     line-height: 1.15em;
   }
 
-  &__copy span:first-of-type {
-    letter-spacing: 5.28px;
-   
+  &__copy span:nth-of-type(1) {
+    font-weight: 100;
+    letter-spacing: 0.33em;
+    margin-right: -0.5em;
+  }
+  
+  &__copy span:nth-of-type(2) {
+    letter-spacing: 0.05em;
+    color: $color-gray-light;
+    font-weight: 700;
   }
 }
 
+a .fab:hover, :focus {
+  color: $color-accent;
+}

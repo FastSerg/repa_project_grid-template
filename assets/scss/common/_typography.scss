@@ -14,15 +14,42 @@ html {
   overflow-y: scroll;
 }
 
-h1 {
-  font-size: 3.75rem;
-  letter-spacing: 0.08em;
+h1 { 
   line-height: 1.2em;
+  letter-spacing: 0.08em;
   font-weight: 300;
   font-family: $font-header;
+
+  @include lg-min {
+    font-size: 3.75rem;
+  }
+  
+  @include lg-md {
+    font-size: 2.5rem;
+  }
+
+  @include md {
+    font-size: 1.875rem;
+
+  }
+ 
 }
 
 a {
   text-decoration: none;
   color: $color-light;
+}
+
+.form-item__input {
+  border: 2px solid rgba($color-light, 0);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.125rem;
+  line-height: 2.17em;
+  letter-spacing: 0.15em;
+}
+
+.fab {
+  font-size: 2.25rem;
+  transition: color 0.5s;
 }
