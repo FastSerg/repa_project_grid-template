@@ -374,6 +374,9 @@ h1 {
   font-weight: 300;
   font-family: "Roboto Slab", serif;
 }
+h1 h3 {
+  font-style: inherit;
+}
 
 a {
   text-decoration: none;
@@ -381,9 +384,6 @@ a {
 }
 
 .form-item__input {
-  border: 2px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.05);
   font-size: 1.125rem;
   line-height: 2.17em;
   letter-spacing: 0.15em;
@@ -432,15 +432,17 @@ a {
 .btn--input {
   font-size: 1.125rem;
   height: 60px;
-  border: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
   background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
   width: 100%;
 }
 
-.btn--input:hover {
-  border: 2px solid #ffffff;
-  background-color: #d66926;
+.btn--input:hover,
+:focus {
+  -webkit-box-shadow: 0 0 0 2px #ffffff;
+          box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
 }
 
 .header {
@@ -779,16 +781,36 @@ a {
   height: 60px;
   padding: 0 30px;
   width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.25);
   -webkit-transition: background-color 0.5s, border-bottom-color 0.5s;
   -o-transition: background-color 0.5s, border-bottom-color 0.5s;
   transition: background-color 0.5s, border-bottom-color 0.5s;
 }
-.form-item__input:hover {
+.form-item__input:hover::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-item__input:hover::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-item__input:hover:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-item__input:hover::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-item__input:hover::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-item__input:hover,
+.form-item :focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  color: #ffffff;
   background-color: rgba(255, 255, 255, 0.15);
-  border-color: 2px solid rgba(255, 255, 255, 0.15);
   border-bottom-color: #ffffff;
 }
 .posts__title {
@@ -807,6 +829,11 @@ a {
   display: grid;
   height: 100%;
   grid-template-rows: 300px 1fr;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 .post-item__img {
   display: -webkit-box;
@@ -818,16 +845,13 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.post-item__img img {
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   -o-transition: transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-}
-.post-item__img img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -840,6 +864,7 @@ a {
   -ms-flex-line-pack: center;
       align-content: center;
   line-height: 1.15em;
+  background-color: #eeeeee;
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
@@ -854,7 +879,7 @@ a {
   background-color: #e5e5e5;
   color: #2d3651;
 }
-.post-item:hover .post-item__img {
+.post-item:hover .post-item__img img {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -1123,7 +1148,7 @@ a .fab:hover, :focus {
     position: absolute;
     text-align: right;
     top: 100%;
-    background-color: rgba(99, 117, 136, 0.5);
+    background-color: rgba(68, 89, 110, 0.9);
     right: 20px;
   }
   .header-navbar__item {
@@ -1170,9 +1195,6 @@ a .fab:hover, :focus {
   .form__container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .form__container {
-    grid-template-columns: repeat(1fr);
-  }
   .form-item {
     max-width: 100%;
   }
@@ -1182,6 +1204,12 @@ a .fab:hover, :focus {
   .posts__grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
+  }
+}
+
+@media (max-height: 690px) {
+  .skills__container {
+    grid-auto-rows: 216.6666666667px;
   }
 }
 
@@ -1228,7 +1256,6 @@ a .fab:hover, :focus {
     text-align: center;
   }
   .posts__grid {
-    grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
   }
 }

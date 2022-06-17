@@ -56,11 +56,11 @@
 .btn--input {
   font-size: 1.125rem;
   height: 60px;
-  border: none;
-  border-bottom: 2px solid rgba($color-light, 0.15);
   background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);  
+  border-bottom-color: rgba($color-light, 0.25);
   width: 100%;
-
+  
   @include sm-min {
     max-width: 420px;
   }
@@ -70,7 +70,8 @@
   }
 }
 
-.btn--input:hover {
-  border: 2px solid $color-light;
-  background-color: $color-accent;
+.btn--input:hover,
+:focus {
+  box-shadow: 0 0 0 2px $color-light;
+  cursor: pointer;
 }

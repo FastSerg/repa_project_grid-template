@@ -20,6 +20,9 @@ h1 {
   font-weight: 300;
   font-family: $font-header;
 
+h3 {
+  font-style: inherit;
+}  
   @include lg-min {
     font-size: 3.75rem;
   }

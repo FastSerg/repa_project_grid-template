@@ -20,9 +20,6 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include md-sm {
-      grid-template-columns: repeat(1fr);
-    }
   }
   
 }
@@ -43,10 +40,15 @@
     height: 60px;
     padding: 0 $gap-lg;
     width: 100%;
-    border: 2px solid rgba($color-light, 0);
-    border-bottom-color: rgba($color-light, 0.25);
     background-color: rgba($color-light, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0);    
+    color: $color-light;
+    border-bottom-color: rgba($color-light, 0.25);
     transition: background-color 0.5s, border-bottom-color 0.5s;
+  }
+
+  &__input:hover::placeholder {
+    color: rgba($color-light, 0.5);
   }
 
   &:nth-of-type(1) {
@@ -55,11 +57,13 @@
     }
   }
   
-  &__input:hover {
+  &__input:hover,
+  :focus {
+    box-shadow: none;
+    outline: none;
+    color: $color-light;
     background-color:rgba($color-light, 0.15);
-    border-color: 2px solid rgba($color-light, 0.15);
     border-bottom-color: $color-light;
-
   }
  
 }

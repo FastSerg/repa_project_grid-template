@@ -66,7 +66,7 @@
     }
 
     @include sm {
-      grid-template-columns: repeat(1, 1fr);
+      // grid-template-columns: repeat(1, 1fr);
       grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
     }
   }
@@ -80,6 +80,8 @@
     display: grid;
     height: 100%;
     grid-template-rows: 300px 1fr;
+    transition: transform 0.5s;
+
   }
 
   &__img {
@@ -87,16 +89,14 @@
     overflow: hidden; 
     align-content: center;
     justify-content: center;
+  }
+
+  &__img img {
     transition: transform 0.5s;
     object-fit: cover;
     width: 100%;
   }
 
-  &__img img {
-    object-fit: cover;
-    width: 100%;
-  }
-  
   &__caption {
     color: $color-gray;
     text-align: center;
@@ -104,7 +104,7 @@
     display: grid;
     align-content: center;
     line-height: 1.15em;
-
+    background-color: #eeeeee;
     transition: background-color 0.5s;
   }
 
@@ -121,7 +121,7 @@
       color: $color-primary;  
     }
 
-    .post-item__img {
+    .post-item__img img {
       transform: scale(1.1);
     }
   }
