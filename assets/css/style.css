@@ -785,9 +785,9 @@ a {
   border: 2px solid rgba(255, 255, 255, 0);
   color: #ffffff;
   border-bottom-color: rgba(255, 255, 255, 0.25);
-  -webkit-transition: background-color 0.5s, border-bottom-color 0.5s;
-  -o-transition: background-color 0.5s, border-bottom-color 0.5s;
-  transition: background-color 0.5s, border-bottom-color 0.5s;
+  -webkit-transition: background-color 0.5s, border-color 0.5s, border-bottom-color 0.5s;
+  -o-transition: background-color 0.5s, border-color 0.5s, border-bottom-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s, border-bottom-color 0.5s;
 }
 .form-item__input:hover::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -810,6 +810,7 @@ a {
           box-shadow: none;
   outline: none;
   color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
   background-color: rgba(255, 255, 255, 0.15);
   border-bottom-color: #ffffff;
 }
